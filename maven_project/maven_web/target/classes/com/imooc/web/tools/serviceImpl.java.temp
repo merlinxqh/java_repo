@@ -1,0 +1,31 @@
+/**
+ * ${package}.${javaName}.java
+ */
+package ${package};
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.imooc.base.dao.BaseDao;
+import ${dao};
+import ${entity};
+import ${superPackage}.${super};
+import ${baseService};
+
+/**
+ * 组织service
+ * @author admin
+ * 
+ * @since 2012-9-7
+ */
+@Service
+@Transactional
+public class ${javaName} extends ${baseServiceName}<${entityName}> implements ${super} {
+	@Autowired
+	private ${daoName} ${lowDaoName};
+	@Override
+	protected BaseDao getDao() {
+		return ${lowDaoName};
+	}	
+}

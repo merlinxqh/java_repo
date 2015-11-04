@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd" 
+		>
+	<bean id="dataSource" class="com.imooc.base.spring.RoutingDataSource">
+		<property name="targetDataSources">
+			<map key-type="java.lang.String">
+				<entry value-ref="mysql_education" key="mysql_education"></entry>
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="mysql_education"/> 
+	</bean>  
+	
+	<bean id="mysql_education" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<!-- 		驱动 -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+<!-- 		数据库连接 -->
+		<property name="url" value="jdbc:mysql://localhost:3306/learn?useUnicode=true&amp;characterEncoding=utf8"/>
+<!-- 		用户 -->
+		<property name="username" value="root" />
+<!-- 		密码 -->
+		<property name="password" value="657833103" />
+<!-- 		连接数初始连接数  -->
+		<property name="initialSize" value="5" />
+<!-- 		最大连接数 -->
+		<property name="maxActive" value="50" />
+<!-- 		最小空闲连接 -->
+		<property name="minIdle" value="5"/>
+<!-- 		最大空闲连接 -->
+		<property name="maxIdle" value="15" />
+<!-- 		自动提交 -->
+		<property name="defaultAutoCommit" value="false" />
+<!-- 		自动回收超时连接 -->
+		<property name="removeAbandoned" value="true" />
+<!-- 		超时时间(以秒数为单位) -->
+		<property name="removeAbandonedTimeout" value="30"/>
+<!-- 		测试连接有效性 -->
+		<property name="validationQuery" value="select  count(1) from dual" />
+<!-- 		获取连接时测试连接 -->
+		<property name="testOnBorrow" value="true" />
+	</bean>
+</beans>

@@ -1,0 +1,16 @@
+/**
+ * ${package}.${javaName}.java
+ */
+package ${package};
+
+import com.imooc.transaction.base.service.BaseService;
+import ${entity};
+
+/**
+ * @author admin
+ * 
+ * @since ${date}
+ */
+public interface ${javaName} extends BaseService<${entityName}> {
+	
+}

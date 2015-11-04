@@ -1,0 +1,22 @@
+/**
+ * ${package}.${javaName}.java
+ */
+package ${package};
+
+import org.springframework.stereotype.Repository;
+
+import com.imooc.transaction.base.dao.impl.BaseDaoImpl;
+import ${superPackage}.${super};
+
+/**
+ * @author admin
+ * 
+ * @since ${date}
+ */
+@Repository
+public class ${javaName} extends BaseDaoImpl implements ${super} {
+	@Override
+	protected String getNameSpace() {
+		return "${nameSpace}";
+	}
+}

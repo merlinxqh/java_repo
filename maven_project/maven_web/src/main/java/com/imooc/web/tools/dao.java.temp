@@ -1,0 +1,14 @@
+/**
+ * ${package}.${javaName}.java
+ */
+package ${package};
+
+import com.imooc.base.dao.BaseDao;
+
+/**
+ * @author System
+ *
+ * @since ${date}
+ */
+public interface ${javaName} extends BaseDao {
+}
