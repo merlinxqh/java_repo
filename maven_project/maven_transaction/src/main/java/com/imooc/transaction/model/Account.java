@@ -9,7 +9,9 @@ import com.imooc.transaction.base.model.CoreEntity;
  */
 @SuppressWarnings("serial")
 public class Account extends CoreEntity{
-
+    /**
+     * 姓名
+     */
 	private String name;
 
 	private Double money;
