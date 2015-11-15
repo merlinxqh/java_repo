@@ -38,6 +38,7 @@
 	<sql id="selectFilter">
 		<where>
 			<if test="id != null"> AND D.FID = #{id}</if>
+			<if test="name != null">and D.FNAME = #{name}</if>
 		</where>
 	</sql>
 	<select id="select" parameterType="java.util.Map" resultType="com.imooc.web.model.Account">
