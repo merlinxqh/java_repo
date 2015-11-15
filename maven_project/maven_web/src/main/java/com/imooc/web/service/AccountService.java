@@ -13,4 +13,5 @@ import com.imooc.web.model.Account;
  */
 public interface AccountService extends BaseService<Account> {
 	
+	String changeMoney(double money,String name);
 }

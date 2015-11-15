@@ -14,7 +14,7 @@ import ${superPackage}.${super};
 import ${baseService};
 
 /**
- * 组织service
+ * 
  * @author admin
  * 
  * @since 2012-9-7
